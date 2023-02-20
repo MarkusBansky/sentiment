@@ -1,5 +1,9 @@
 # 😛 Sentiment — javascript NLP tool for fast and simple sentiment analysis
 
+[![npm version](https://badge.fury.io/js/nlp-sentiment.svg)](https://badge.fury.io/js/nlp-sentiment)
+[![npm test & build](https://github.com/MarkusBansky/sentiment/actions/workflows/nodejs.yaml/badge.svg?branch=main)](https://github.com/MarkusBansky/sentiment/actions/workflows/nodejs.yaml)
+[![codecov](https://codecov.io/gh/MarkusBansky/sentiment/branch/main/graph/badge.svg?token=M1BGVWCQX8)](https://codecov.io/gh/MarkusBansky/sentiment)
+
 This is a small and fast library for nlp sentiment analysis which supports any language, or any custom vocabulary.
 It can also use intensifiers with positive or negative words adding more contrast.
 
