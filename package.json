@@ -1,0 +1,42 @@
+{
+  "name": "nlp-sentiment",
+  "version": "1.0.0",
+  "description": "A very tiny, fast and useful tool for sentiment analysis. It works with any language and can also use provided intensifier words!",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "test": "jest --coverage",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkusBansky/sentiment.git"
+  },
+  "keywords": [
+    "nlp",
+    "sentiment",
+    "analysis"
+  ],
+  "author": "Markiian Benovskyi",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/MarkusBansky/sentiment/issues"
+  },
+  "homepage": "https://github.com/MarkusBansky/sentiment#readme",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "husky": "^8.0.3",
+    "jest": "^29.4.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "2.8.4",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}

@@ -1,0 +1,7 @@
+# Ignore artifacts:
+.github
+.husky
+.vscode
+coverage
+dist
+node_modules
