@@ -1,4 +1,4 @@
-# Sentiment — javascript NLP tool for fast and simple sentiment analysis
+# 😛 Sentiment — javascript NLP tool for fast and simple sentiment analysis
 
 This is a small and fast library for nlp sentiment analysis which supports any language, or any custom vocabulary.
 It can also use intensifiers with positive or negative words adding more contrast.
@@ -44,6 +44,47 @@ const sentiment = nlpSentiment()
 
 // and now you are ready to use it for your sentences
 const sentencesSentiment = sentiment.analyse([sentence]);
+```
+
+#### Interfaces
+
+The input interfaces are:
+
+```js
+export interface Sentence {
+  index: number;
+  tokens: Token[];
+}
+```
+
+and for token:
+
+```js
+export interface Token {
+  index: number;
+  lemma: string;
+
+  depType?: string;
+  depIndex?: number;
+}
+```
+
+Then the output would be very similar:
+
+```js
+export interface SentenceResult extends Omit<Sentence, "tokens"> {
+  tokens: TokenResult[];
+  sentiment: number;
+  attitude: "positive" | "negative";
+}
+```
+
+and token is:
+
+```js
+export interface TokenResult extends Token {
+  sentiment: number;
+}
 ```
 
 ###### Note
