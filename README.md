@@ -3,6 +3,11 @@
 [![npm version](https://badge.fury.io/js/nlp-sentiment.svg)](https://badge.fury.io/js/nlp-sentiment)
 [![npm test & build](https://github.com/MarkusBansky/sentiment/actions/workflows/nodejs.yaml/badge.svg?branch=main)](https://github.com/MarkusBansky/sentiment/actions/workflows/nodejs.yaml)
 [![codecov](https://codecov.io/gh/MarkusBansky/sentiment/branch/main/graph/badge.svg?token=M1BGVWCQX8)](https://codecov.io/gh/MarkusBansky/sentiment)
+[![Known Vulnerabilities](https://snyk.io/test/github/MarkusBansky/sentiment/badge.svg)](https://snyk.io/test/github/MarkusBansky/sentiment)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MarkusBansky_sentiment&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MarkusBansky_sentiment)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=MarkusBansky_sentiment&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=MarkusBansky_sentiment)
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=MarkusBansky_sentiment)
 
 This is a small and fast library for nlp sentiment analysis which supports any language, or any custom vocabulary.
 It can also use intensifiers with positive or negative words adding more contrast.
