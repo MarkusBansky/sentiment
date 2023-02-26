@@ -1,6 +1,6 @@
 {
   "name": "nlp-sentiment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A very tiny, fast and useful tool for sentiment analysis. It works with any language and can also use provided intensifier words!",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
