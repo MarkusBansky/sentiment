@@ -1,5 +1,4 @@
-import * as fs from "fs";
-import { formVocabularyFromWords, formVocabularyFromFile } from "./vocabulary";
+import { formVocabularyFromWords } from "./vocabulary";
 
 jest.mock("fs");
 
@@ -8,76 +7,6 @@ describe("vocabulary.ts", () => {
   const word1 = "word1";
   const word2 = "word1";
   const word3 = "word1";
-
-  describe("formVocabularyFromFile", () => {
-    const file = "filename.txt";
-
-    let fsMock: jest.SpyInstance,
-      existMock: jest.SpyInstance,
-      logSpy: jest.SpyInstance;
-
-    beforeEach(() => {
-      fsMock = jest
-        .spyOn(fs, "readFileSync")
-        .mockReturnValue([word1, word2, word3].join("\n"));
-      existMock = jest.spyOn(fs, "existsSync").mockReturnValue(true);
-      logSpy = jest.spyOn(console, "error").mockImplementation(() => {});
-    });
-
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
-    it("calls fs method to read file", () => {
-      formVocabularyFromFile(file, val);
-
-      expect(existMock).toBeCalled();
-      expect(fsMock).toBeCalled();
-    });
-
-    it("builds voc from file content", () => {
-      const voc = formVocabularyFromFile(file, val);
-
-      expect(voc[word1]).toEqual(val);
-      expect(voc[word2]).toEqual(val);
-      expect(voc[word3]).toEqual(val);
-    });
-
-    it("returns empty vocabulary on empty file", () => {
-      fsMock.mockReturnValue("");
-
-      const voc = formVocabularyFromFile(file, val);
-
-      expect(voc).toEqual({});
-    });
-
-    it("returns empty vocabulary on undefined filename", () => {
-      const voc = formVocabularyFromFile(undefined as unknown as string, val);
-
-      expect(voc).toEqual({});
-    });
-
-    it("returns empty when file does not exist", () => {
-      existMock.mockReturnValue(false);
-
-      const voc = formVocabularyFromFile(file, val);
-
-      expect(voc).toEqual({});
-    });
-
-    it("logs error that file does not exist", () => {
-      existMock.mockReturnValue(false);
-      formVocabularyFromFile(file, val);
-
-      expect(logSpy).toBeCalled();
-    });
-
-    it("return empty if value not present", () => {
-      const voc = formVocabularyFromFile(file, undefined as unknown as number);
-
-      expect(voc).toEqual({});
-    });
-  });
 
   describe("formVocabularyFromWords", () => {
     it("builds voc from array of words", () => {

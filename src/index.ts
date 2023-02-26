@@ -1,6 +1,6 @@
 import { analyseSentence } from "./analysis";
 import { Vocabulary, Sentence, SentenceResult } from "./types";
-import { formVocabularyFromFile, formVocabularyFromWords } from "./vocabulary";
+import { formVocabularyFromWords } from "./vocabulary";
 
 class NlpSentiment {
   private _positiveVocabulary: Vocabulary;
@@ -20,18 +20,8 @@ class NlpSentiment {
     return this;
   }
 
-  withPositiveAsFile(filePath: string): NlpSentiment {
-    this._positiveVocabulary = formVocabularyFromFile(filePath, 1);
-    return this;
-  }
-
   withNegativeWords(words: string[]): NlpSentiment {
     this._negativeVocabulary = formVocabularyFromWords(words, -1);
-    return this;
-  }
-
-  withNegativeAsFile(filePath: string): NlpSentiment {
-    this._negativeVocabulary = formVocabularyFromFile(filePath, -1);
     return this;
   }
 
@@ -40,18 +30,8 @@ class NlpSentiment {
     return this;
   }
 
-  withIntensifierAsFile(filePath: string): NlpSentiment {
-    this._intensifierVocabulary = formVocabularyFromFile(filePath, 1.5);
-    return this;
-  }
-
   withNegationWords(words: string[]): NlpSentiment {
     this._negationVocabulary = formVocabularyFromWords(words, -1);
-    return this;
-  }
-
-  withNegationAsFile(filePath: string): NlpSentiment {
-    this._negationVocabulary = formVocabularyFromFile(filePath, -1);
     return this;
   }
 
