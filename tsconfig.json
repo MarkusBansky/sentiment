@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "target": "es3",
+    "rootDir": "./src",
+    "target": "es2016",
     "module": "commonjs",
     "declaration": true,
     "strict": true,
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "types": ["jest"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.test.ts"]

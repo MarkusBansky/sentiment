@@ -23,12 +23,12 @@ describe("index.ts", () => {
     it("initialises with default empty vocabularies", () => {
       const analyseSpy = jest
         .spyOn(analysis, "analyseSentence")
-        .mockImplementation(() => ({} as SentenceResult));
+        .mockImplementation(() => ({}) as SentenceResult);
 
       const nlpSentiment = sentiment();
       nlpSentiment.analyse([{} as Sentence]);
 
-      expect(analyseSpy).toBeCalledWith({}, {}, {}, {}, {});
+      expect(analyseSpy).toHaveBeenCalledWith({}, {}, {}, {}, {});
 
       analyseSpy.mockClear();
     });
@@ -36,25 +36,25 @@ describe("index.ts", () => {
     it("initialises positive vocabulary from array", () => {
       const nlpSentiment = sentiment().withPositiveWords(array);
 
-      expect(fromWordsSpy).toBeCalledWith(array, 1);
+      expect(fromWordsSpy).toHaveBeenCalledWith(array, 1);
     });
 
     it("initialises negative vocabulary from array", () => {
       const nlpSentiment = sentiment().withNegativeWords(array);
 
-      expect(fromWordsSpy).toBeCalledWith(array, -1);
+      expect(fromWordsSpy).toHaveBeenCalledWith(array, -1);
     });
 
     it("initialises negation vocabulary from array", () => {
       const nlpSentiment = sentiment().withNegationWords(array);
 
-      expect(fromWordsSpy).toBeCalledWith(array, -1);
+      expect(fromWordsSpy).toHaveBeenCalledWith(array, -1);
     });
 
     it("initialises intensifier vocabulary from array", () => {
       const nlpSentiment = sentiment().withIntensifierWords(array);
 
-      expect(fromWordsSpy).toBeCalledWith(array, 1.5);
+      expect(fromWordsSpy).toHaveBeenCalledWith(array, 1.5);
     });
   });
 });
